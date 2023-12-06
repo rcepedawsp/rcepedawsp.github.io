@@ -59,17 +59,11 @@
       ) {
         parser.parse();
 
-        app.webmapId = "523e292002294392a36d888a9780a731";
+        app.webmapId = "1c322122c0d24c5d99ecb085ba92905d";
         app.printUrl = "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task";
 
         esriConfig.defaults.io.proxyUrl = "/proxy/";
         
-        var webmap = arcgisUtils.createMap(app.webmapId, "map", {
-          mapOptions: {
-            center: [-85.673, 38.21],
-            zoom: 10
-          }
-        });
         webmap.then(function(resp) {
           app.mapInfo = resp.itemInfo.item;
           app.map = resp.map;
